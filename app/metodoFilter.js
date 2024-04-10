@@ -1,16 +1,20 @@
 const botoesCategoria = document.querySelectorAll('.btn')
 
+function livrosDisponiveis(listaLivros) {
+    const res = listaLivros.filter((livro) =>
+        livro.quantidade > 0
+    )
+    return res
+}
 botoesCategoria.forEach(botao => {
     botao.addEventListener('click', () => {
         let resultado = null
         if (botao.value) {
             resultado = livros.filter((livro) =>
                 livro.categoria === botao.value
-            )
+            )   
         } else if (botao.classList[1] === 'btn-disponiveis') {
-            resultado = livros.filter((livro) =>
-                livro.quantidade > 0
-            )
+            resultado = livrosDisponiveis()
         } else if (botao.id == 'btnListaInicial') {
             init()
         } else {
@@ -18,7 +22,10 @@ botoesCategoria.forEach(botao => {
                 return a.preco - b.preco
             })
         }
-        resultado && exibirLivros(resultado)
+         if (resultado){ 
+            exibirLivros(resultado)
+            total.innerText = somarLivros(resultado)
+        }
     })
 })
 
