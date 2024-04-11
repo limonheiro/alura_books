@@ -87,7 +87,7 @@ body {
   width: 95%;
   align-self: center;
   padding-bottom: 0.5rem;
-  gap: 0.2rem;
+  gap: 0.1rem;
 }
 .produto{
   padding-top: 0.2rem;
@@ -103,9 +103,9 @@ body {
   min-width: 90px;
   height: 60px;
   object-position: 100% 0;
-  object-fit: cover;
-  
+  object-fit: cover;  
 }
+
 .livro__titulo__carrinho{
   font-size: 14px;
   color: var(--text-title-color);

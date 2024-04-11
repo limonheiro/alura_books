@@ -1,5 +1,6 @@
 const botoesCategoria = document.querySelectorAll('.btn')
 
+//retorna livros disponiveis de um conjunto 
 function livrosDisponiveis(listaLivros) {
     const res = listaLivros.filter((livro) =>
         livro.quantidade > 0
@@ -7,6 +8,7 @@ function livrosDisponiveis(listaLivros) {
     return res
 }
 
+// funções para botão
 botoesCategoria.forEach(botao => {
     botao.addEventListener('click', () => {
         let resultado = null

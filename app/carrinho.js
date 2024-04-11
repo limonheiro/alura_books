@@ -14,16 +14,16 @@ async function itemLivros() {
 }
 
 carinhoIcone.addEventListener('click', () => {
-    console.log(popCarrinho.classList.length === 1)
-
-    if (popCarrinho.classList.length === 1 && popCarrinho.classList[1] === undefined) {
+        if (popCarrinho.classList.length === 1 && popCarrinho.classList[1] === undefined) {
         popCarrinho.classList.add('disable')
     } else if (carinho.length > 0 && popCarrinho.classList.length == 2) {
         //const elementosSelecionados = indices.map(index => elementos[index]);
         const listaCarrinho = carinho.map(index => livros[index])
         const items = document.querySelector('.produtos__carrinho')
         const totalCarrinho = document.querySelector('.preco_carrinho')
+        items.innerHTML = '';
         listaCarrinho.forEach(item => {
+            
             items.innerHTML += `
                 <div class="produto">
                     <img class="livro__imagens__carrinho" src="${item.imagem}"
@@ -37,7 +37,6 @@ carinhoIcone.addEventListener('click', () => {
         })
 
         totalCarrinho.textContent = `R$${somarLivros(listaCarrinho)}`
-        console.table(listaCarrinho)
         popCarrinho.classList.remove('disable')
     }
 
