@@ -6,6 +6,7 @@ function livrosDisponiveis(listaLivros) {
     )
     return res
 }
+
 botoesCategoria.forEach(botao => {
     botao.addEventListener('click', () => {
         let resultado = null
@@ -14,7 +15,7 @@ botoesCategoria.forEach(botao => {
                 livro.categoria === botao.value
             )   
         } else if (botao.classList[1] === 'btn-disponiveis') {
-            resultado = livrosDisponiveis()
+            resultado = livrosDisponiveis(livros)
         } else if (botao.id == 'btnListaInicial') {
             init()
         } else {
@@ -28,7 +29,6 @@ botoesCategoria.forEach(botao => {
         }
     })
 })
-
 
 
 function limparTela(listaLivros) {

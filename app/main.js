@@ -2,7 +2,7 @@ let livros = []
 const endpointApi = 'https://guilhermeonrails.github.io/casadocodigo/livros.json'
 const total = document.getElementById('valor')
 
-let carinho = []
+let listaItems = []
 
 getBuscarLivros()
 
@@ -17,6 +17,7 @@ async function init() {
     livros = await getBuscarLivros()
     exibirLivros(livros)
     total.innerText = somarLivros(livros)
+    await itemLivros()
 }
 
 function somarLivros(listaLivros) {
