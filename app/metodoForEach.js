@@ -1,11 +1,11 @@
 const elementoParaInserirLivros = document.getElementById('livros')
 
-function exibirLivros(listaDeLivros) {
+async function exibirLivros(listaDeLivros) {
     elementoParaInserirLivros.innerHTML = ""
     listaDeLivros.forEach((livro, ind) => {
         const disponibilidade = "livro__imagens" + (livro.quantidade <= 0? " indisponivel" : '')
         elementoParaInserirLivros.innerHTML += `
-        <div class="livro" id="${ind}">
+        <div class="livro" id="${ind}" data-quantidade="${livro.quantidade}">
             <img class="${disponibilidade}" src="${livro.imagem}" alt="${livro.alt}" />
 
             <h2 class="livro__titulo">
@@ -22,6 +22,7 @@ function exibirLivros(listaDeLivros) {
         </div>
         `
     })
+    await itemLivros()
 
 
 }

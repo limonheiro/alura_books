@@ -17,7 +17,7 @@ async function init() {
     livros = await getBuscarLivros()
     exibirLivros(livros)
     total.innerText = somarLivros(livros)
-    await itemLivros()
+    
 }
 
 function somarLivros(listaLivros) {
